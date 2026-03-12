@@ -1,3 +1,19 @@
 <resources>
-    <string name="app_name">BeRich</string>
+    <string name="name">BeRich</string>
+    <string name="disclaimer_text">Projecte Integrat de Software UB. ID:20241001</string>
+    <string name="logo_description">Logotip de BeRich</string>
+
+    <string name="iniciar_sessio">Iniciar Sessió</string>
+    <string name="registrar">Registrar</string>
+
+    <!--activity_register -->
+    <string name ="signup_text">Sign up now!</string>
+    <string name="signup_enter_username_hint">Username</string>
+    <string name="signup_enter_password_hint">Password</string>
+    <string name="signup_enter_email_hint">Email</string>
+    <string name="signup_enter_password_c_hint">Confirm Password</string>
+    <string name="c_signup_button">Sign up</string>
+
+
+
 </resources>
