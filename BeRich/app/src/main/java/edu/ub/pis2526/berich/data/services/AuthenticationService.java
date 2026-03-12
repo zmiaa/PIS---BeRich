@@ -19,23 +19,36 @@ public class AuthenticationService {
 
   /**
    * Log in client with username and password.
-   * @param username the username
+   * @param email the username
    * @param enteredPassword the password
    */
-  public void logIn(String username, String enteredPassword, OnLogInListener listener)  {
+  public void logIn(String email, String enteredPassword, OnLogInListener listener)  {
     try{
-      if (username.isEmpty())
-        throw new Throwable("Username cannot be empty");
+      if (email.isEmpty())
+        throw new Throwable("Email cannot be empty");
       if (enteredPassword.isEmpty())
         throw new Throwable("Password cannot be empty");
-      if (!clients.containsKey(username))
-        throw new Throwable("Username does not exist");
+      if (!isEmailValid(email)) {
+        throw new Throwable("El format del correu no és vàlid");
+      }
 
-      Client client = clients.get(username);
-      if (!client.getPassword().equals(enteredPassword))
+      Client clientFound = null;
+      for (Client c : clients.values()) {
+        if (c.getEmail().equalsIgnoreCase(email)) {
+          clientFound = c;
+          break;
+        }
+      }
+      if (clientFound == null) {
+        throw new Throwable("No user found with this email");
+      }
+
+      if (!clientFound.getPassword().equals(enteredPassword)) {
         throw new Throwable("Incorrect password");
+      }
 
-      listener.onLogInSuccess(client);
+
+      listener.onLogInSuccess(clientFound);
     }catch(Throwable throwable){
       listener.onLogInError(throwable);
     }
@@ -71,13 +84,23 @@ public class AuthenticationService {
         listener.onSignUpError(new Exception("El format del correu no és vàlid"));
         return;
       }
-      // Si es correcto, creamos el cliente y lo añadimos al HashMap
+
+      if (!isPasswordStrong(password)) {
+        throw new Throwable("La contrasenya ha de tenir almenys 6 caràcters, una majúscula i un número");
+      }
+
+      for (Client c : clients.values()) {
+        if (c.getEmail().equals(email)) {
+          throw new Throwable("This email is already registered");
+        }
+      }
+
       Client newClient = new Client(username, email, password);
       clients.put(username, newClient);
       listener.onSignUpSuccess();
 
     } catch (Throwable throwable) {
-      // Notificamos error
+
       listener.onSignUpError(throwable);
     }
   }
@@ -94,5 +117,22 @@ public class AuthenticationService {
 
   private boolean isEmailValid(String email) {
     return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+  }
+
+  //Afegim requisits de la contrasenya
+  private boolean isPasswordStrong(String password) {
+    //Tener minimo 6 caracteres
+    if (password.length() < 6) return false;
+
+    boolean hasUppercase = false;
+    boolean hasDigit = false;
+
+    for (char c : password.toCharArray()) {
+      if (Character.isUpperCase(c)) hasUppercase = true;
+      if (Character.isDigit(c)) hasDigit = true;
+      //Si cumple todo
+      if (hasUppercase && hasDigit) return true;
+    }
+    return false;
   }
 }
