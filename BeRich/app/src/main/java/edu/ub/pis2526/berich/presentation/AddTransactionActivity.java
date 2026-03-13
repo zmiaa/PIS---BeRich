@@ -3,25 +3,28 @@ package edu.ub.pis2526.berich.presentation;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
+
 import edu.ub.pis2526.berich.R;
+import edu.ub.pis2526.berich.databinding.ActivityAddTransactionBinding;
 
 public class AddTransactionActivity extends AppCompatActivity {
 
-    private TextView txtAmountDisplay;
+    private ActivityAddTransactionBinding binding;
     private String currentAmount = "0";
     private boolean isIncome = false; // Per defecte despesa segons el mockup
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        // Això enllaça el codi amb el disseny
-        setContentView(R.layout.activity_add_transaction);
+        // Inicialitzar binding
+        binding = ActivityAddTransactionBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        // Vinculem el visor de text del XML
-        txtAmountDisplay = findViewById(R.id.txtAmountDisplay);
+        updateDisplay();
     }
 
 
@@ -53,16 +56,16 @@ public class AddTransactionActivity extends AppCompatActivity {
 
     private void updateDisplay() {
         // Mostrem el número amb el símbol de l'euro o dòlar segons el mockup
-        txtAmountDisplay.setText(currentAmount + " €");
+        binding.txtAmountDisplay.setText(currentAmount + " €");
     }
 
     public void onTypeClick(View view) {
         if (view.getId() == R.id.btnPlus) {
             isIncome = true;
-            txtAmountDisplay.setTextColor(getResources().getColor(R.color.blue_income));
+            binding.txtAmountDisplay.setTextColor(ContextCompat.getColor    (this, R.color.blue_light));
         } else if (view.getId() == R.id.btnMinus) {
             isIncome = false;
-            txtAmountDisplay.setTextColor(getResources().getColor(R.color.orange_expense));
+            binding.txtAmountDisplay.setTextColor(ContextCompat.getColor(this, R.color.orange_light));
         }
     }
 }
