@@ -1,5 +1,6 @@
 package edu.ub.pis2526.berich.presentation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -11,32 +12,28 @@ import androidx.core.view.WindowInsetsCompat;
 
 import edu.ub.pis2526.berich.R;
 import edu.ub.pis2526.berich.data.services.AuthenticationService;
-import edu.ub.pis2526.berich.databinding.ActivityRegisterBinding;
+import edu.ub.pis2526.berich.databinding.ActivityLoginBinding;
+import edu.ub.pis2526.berich.domain.Client;
 
-public class RegisterActivity extends AppCompatActivity {
-
-    private ActivityRegisterBinding binding;
+public class LoginActivity extends AppCompatActivity {
     private AuthenticationService authenticationService;
-
+    private ActivityLoginBinding binding;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        binding= ActivityRegisterBinding.inflate(getLayoutInflater());
-
+        binding =  ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
         authenticationService = new AuthenticationService();
 
-        binding.btnConfirmSignUp.setOnClickListener(v -> {
-            String username = binding.etSignUpUsername.getText().toString().trim();
-            String email = binding.etSignUpEmail.getText().toString().trim();
-            String password = binding.etSignUpPassWord.getText().toString();
-            String c_password = binding.etSignUpPassWordConfirmation.getText().toString();
+        binding.btnLogIn.setOnClickListener(v -> {
+            String email = binding.etLoginEmail.getText().toString().trim();
+            String password = binding.etLoginPassword.getText().toString();
 
-            authenticationService.signUp(username, email, password, c_password, new AuthenticationService.OnSignUpListener() {
+            authenticationService.logIn(email, password, new AuthenticationService.OnLogInListener() {
                 @Override
-                public void onSignUpSuccess() {
+                public void onLogInSuccess(Client client) {
 
                     //Cuando tengamos Home Page, descomentamos!!!!!!!!!
                     // Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
@@ -44,14 +41,20 @@ public class RegisterActivity extends AppCompatActivity {
                 }
 
                 @Override
-                public void onSignUpError(Throwable throwable) {
-                    Toast.makeText(RegisterActivity.this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                public void onLogInError(Throwable throwable) {
+
                 }
             });
         });
 
+        //Saltar a la pagina de SignUp si encara no s'ha registrat
+        binding.btnSignUp.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
+        });
+
         EdgeToEdge.enable(this);
-        ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
+        ViewCompat.setOnApplyWindowInsetsListener(binding.login, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;

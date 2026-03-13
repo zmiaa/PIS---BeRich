@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="20dp"
-    tools:context=".domain.MainActivity">
+    tools:context=".presentation.MainActivity">
 
     <ImageView
         android:id="@+id/iv_logo"
@@ -22,12 +22,15 @@
         android:id="@+id/btn_go_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/blue_light"
         android:text="@string/iniciar_sessio" />
 
     <Button
         android:id="@+id/btn_go_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/orange_light"
+
         android:text="@string/registrar"
         android:layout_marginTop="10dp" />
 

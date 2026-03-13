@@ -7,12 +7,22 @@
     <string name="registrar">Registrar</string>
 
     <!--activity_register -->
-    <string name ="signup_text">Sign up now!</string>
+    <string name="signup_text">Sign up now!</string>
     <string name="signup_enter_username_hint">Username</string>
     <string name="signup_enter_password_hint">Password</string>
     <string name="signup_enter_email_hint">Email</string>
     <string name="signup_enter_password_c_hint">Confirm Password</string>
     <string name="c_signup_button">Sign up</string>
+    <string name="signup_button">Sign up</string>
+
+
+    <!--activity_login-->
+    <string name="login_text">Log-in with your credentials:</string>
+    <string name="login_enter_email_hint">Email</string>
+    <string name="login_enter_password_hint">Password</string>
+    <string name="login_button">Log in</string>
+
+
 
 
 

@@ -12,10 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BeRich">
         <activity
+            android:name=".presentation.LoginActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".domain.MainActivity"
+            android:name=".presentation.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
