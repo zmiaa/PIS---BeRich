@@ -22,6 +22,33 @@
     <string name="login_enter_password_hint">Password</string>
     <string name="login_button">Log in</string>
 
+    <!--add_transaction-->
+    <string name="food">Food</string>
+    <string name="transport">Transport</string>
+    <string name="shopping">Shopping</string>
+    <string name="salary">Salary</string>
+    <string name="gift">Gift</string>
+    <string name="bills">Bills</string>
+    <string name="confirmar">Confirmar</string>
+            <!--numeros-->
+    <string name="inic_num">0</string>
+    <string name="num_1">1</string>
+    <string name="num_2">2</string>
+    <string name="num_3">3</string>
+    <string name="num_4">4</string>
+    <string name="num_5">5</string>
+    <string name="num_6">6</string>
+    <string name="num_7">7</string>
+    <string name="num_8">8</string>
+    <string name="num_9">9</string>
+            <!--operacions-->
+    <string name="multi">*</string>
+    <string name="sum">+</string>
+    <string name="resta">-</string>
+    <string name="divisio">/</string>
+
+
+
 
 
 
