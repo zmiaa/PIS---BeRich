@@ -2,6 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+Updated upstream
     <color name="blue_light">#B3E5FC</color>
     <color name="orange_light">#FFE0B2</color>
+
+    <color name="blue_income">#7BC8EA</color>
+    <color name="orange_expense">#EA7B41</color>
+Stashed changes
 </resources>
