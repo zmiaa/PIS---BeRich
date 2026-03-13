@@ -85,27 +85,50 @@
         android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent">
 
+        <Button android:text="1" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
+        <Button android:text="2" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
+        <Button android:text="3" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
+
         <Button
-            style="?attr/materialButtonOutlinedStyle"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:text="1" />
+            android:id="@+id/btnPlus"
+            android:layout_width="102dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#D1E9FF"
+            android:onClick="onTypeClick"
+            android:text="+" />
 
-        <Button android:text="2" style="?attr/materialButtonOutlinedStyle"/>
-        <Button android:text="3" style="?attr/materialButtonOutlinedStyle"/>
-        <Button android:id="@+id/btnPlus" android:text="+" android:backgroundTint="#D1E9FF"/>
+        <Button android:text="4" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
+        <Button android:text="5" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
+        <Button android:text="6" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
 
-        <Button android:text="4" style="?attr/materialButtonOutlinedStyle"/>
-        <Button android:text="5" style="?attr/materialButtonOutlinedStyle"/>
-        <Button android:text="6" style="?attr/materialButtonOutlinedStyle"/>
-        <Button android:id="@+id/btnMinus" android:text="-" android:backgroundTint="#FFE0B2"/>
+        <Button
+            android:id="@+id/btnMinus"
+            android:layout_width="105dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#FFE0B2"
+            android:onClick="onTypeClick"
+            android:text="-" />
 
-        <Button android:text="7" style="?attr/materialButtonOutlinedStyle"/>
-        <Button android:text="8" style="?attr/materialButtonOutlinedStyle"/>
-        <Button android:text="9" style="?attr/materialButtonOutlinedStyle"/>
+        <Button android:text="7" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
+        <Button android:text="8" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
+        <Button android:text="9" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
 
-        <Button android:layout_columnSpan="3" android:text="0" style="?attr/materialButtonOutlinedStyle"/>
-
+        <Button android:layout_columnSpan="3" android:text="0" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
     </GridLayout>
+
+    <Button
+        android:id="@+id/btnSave"
+        android:layout_width="118dp"
+        android:layout_height="49dp"
+        android:layout_margin="16dp"
+        android:layout_marginBottom="328dp"
+        android:backgroundTint="#4CAF50"
+        android:onClick="onSaveTransaction"
+        android:text="Confirmar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

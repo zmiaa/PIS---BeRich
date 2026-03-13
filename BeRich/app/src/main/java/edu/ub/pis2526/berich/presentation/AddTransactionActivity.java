@@ -38,9 +38,22 @@ public class AddTransactionActivity extends AppCompatActivity {
         updateDisplay();
     }
 
+    public void onSaveTransaction(View view) {
+        // Recollim l'import final
+        double finalAmount = Double.parseDouble(currentAmount);
+
+        // Si el botó "-" (Despesa) està actiu, el fem negatiu
+        if (!isIncome) {
+            finalAmount = finalAmount * -1;
+        }
+
+        // Tornem a la pantalla principal
+        finish();
+    }
+
     private void updateDisplay() {
         // Mostrem el número amb el símbol de l'euro o dòlar segons el mockup
-        txtAmountDisplay.setText(currentAmount);
+        txtAmountDisplay.setText(currentAmount + " €");
     }
 
     public void onTypeClick(View view) {
