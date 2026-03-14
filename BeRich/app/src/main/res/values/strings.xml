@@ -51,7 +51,7 @@
     <string name="currency_symbol">€</string>
 
     <!--activity_profile-->
-    <string name="nombre_apellido">Nombre Apellido</string>
+    <string name="username">Username</string>
     <string name="configuraci_de_compte">Configuració de compte</string>
     <string name="settings">SETTINGS</string>
     <string name="help">Help</string>
@@ -62,6 +62,12 @@
     <string name="nav_add">" "</string>
     <string name="nav_mood">" "</string>
     <string name="nav_settings">" "</string>
+
+    <!--activity_home-->
+    <string name="saldo_t">Saldo total</string>
+
+    <string name="cash_label">Efectiu</string>
+    <string name="cards_label">Targetes</string>
 
 
 

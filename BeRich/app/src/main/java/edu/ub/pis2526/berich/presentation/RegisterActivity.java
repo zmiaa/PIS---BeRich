@@ -1,5 +1,6 @@
 package edu.ub.pis2526.berich.presentation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -38,9 +39,9 @@ public class RegisterActivity extends AppCompatActivity {
                 @Override
                 public void onSignUpSuccess() {
 
-                    //Cuando tengamos Home Page, descomentamos!!!!!!!!!
-                    // Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                    // startActivity(intent);
+
+                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                    startActivity(intent);
                 }
 
                 @Override

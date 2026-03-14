@@ -56,7 +56,7 @@
                     android:id="@+id/txtUserFullName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/nombre_apellido"
+                    android:text="@string/username"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     android:textColor="@color/ios_text_main" />
@@ -214,7 +214,7 @@
                 android:src="@drawable/settings"
                 style="@style/NavButtonStyle"
                 android:layout_weight="1"
-                app:tint="@color/ios_text_sec"/>
+                app:tint="@color/blue_light"/>
         </LinearLayout>
     </com.google.android.material.card.MaterialCardView>
 
