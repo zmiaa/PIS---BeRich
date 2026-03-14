@@ -59,6 +59,13 @@
     <string name="nav_add">" "</string>
     <string name="nav_mood">" "</string>
     <string name="nav_settings">" "</string>
+    <string name="dot">.</string>
+    <string name="currency_symbol">€</string>
+
+
+
+
+
 
 
 </resources>
