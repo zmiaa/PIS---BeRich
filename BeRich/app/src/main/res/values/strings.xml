@@ -47,10 +47,18 @@
     <string name="resta">-</string>
     <string name="divisio">/</string>
 
-
-
-
-
+    <string name="berich">BeRich</string>
+    <string name="nombre_apellido">Nombre Apellido</string>
+    <string name="configuraci_de_compte">Configuració de compte</string>
+    <string name="settings">SETTINGS</string>
+    <string name="help">Help</string>
+    <string name="language">Language</string>
+    <string name="log_out">Log out</string>
+    <string name="nav_stats">" "</string>
+    <string name="nav_home">" "</string>
+    <string name="nav_add">" "</string>
+    <string name="nav_mood">" "</string>
+    <string name="nav_settings">" "</string>
 
 
 </resources>

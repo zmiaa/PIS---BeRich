@@ -8,5 +8,9 @@ Updated upstream
 
     <color name="blue_income">#7BC8EA</color>
     <color name="orange_expense">#EA7B41</color>
+
+    <color name="berich_green">#4CAF50</color>
+    <color name="ios_text_main">#1C1C1E</color>
+    <color name="ios_text_sec">#8E8E93</color>
 Stashed changes
 </resources>
