@@ -30,40 +30,49 @@ public class AddTransactionActivity extends AppCompatActivity {
 
     public void onNumberClick(View view) {
         Button button = (Button) view;
-        String digit = button.getText().toString();
+        String input = button.getText().toString();
+        String dotChar = getString(R.string.dot); // "."
 
-        if (currentAmount.equals("0")) {
-            currentAmount = digit;
+        if (input.equals(dotChar)) {
+            // Només afegim el punt si no n'hi ha cap ja
+            if (!currentAmount.contains(dotChar)) {
+                currentAmount += dotChar;
+            }
         } else {
-            currentAmount += digit;
+            // Si és "0", posem el número nou
+            if (currentAmount.equals(getString(R.string.inic_num))) {
+                currentAmount = input;
+            } else {
+                currentAmount += input;
+            }
         }
-
         updateDisplay();
     }
 
     public void onSaveTransaction(View view) {
-        // Recollim l'import final
-        double finalAmount = Double.parseDouble(currentAmount);
+        try {
+            double finalAmount = Double.parseDouble(currentAmount);
+            if (!isIncome) finalAmount *= -1;
 
-        // Si el botó "-" (Despesa) està actiu, el fem negatiu
-        if (!isIncome) {
-            finalAmount = finalAmount * -1;
+            // Aquí en un futur fara la crida al ViewModel/BD
+            finish();
+        } catch (NumberFormatException e) {
+            currentAmount = "0";
+            updateDisplay();
         }
-
-        // Tornem a la pantalla principal
-        finish();
     }
 
     private void updateDisplay() {
-        // Mostrem el número amb el símbol de l'euro o dòlar segons el mockup
-        binding.txtAmountDisplay.setText(currentAmount + " €");
+        String textToDisplay = currentAmount + " " + getString(R.string.currency_symbol);
+        binding.txtAmountDisplay.setText(textToDisplay);
     }
 
     public void onTypeClick(View view) {
-        if (view.getId() == R.id.btnPlus) {
+        // comparar IDs directament des del binding
+        if (view.getId() == binding.btnPlus.getId()) {
             isIncome = true;
-            binding.txtAmountDisplay.setTextColor(ContextCompat.getColor    (this, R.color.blue_light));
-        } else if (view.getId() == R.id.btnMinus) {
+            binding.txtAmountDisplay.setTextColor(ContextCompat.getColor(this, R.color.blue_light));
+        } else if (view.getId() == binding.btnMinus.getId()) {
             isIncome = false;
             binding.txtAmountDisplay.setTextColor(ContextCompat.getColor(this, R.color.orange_light));
         }
