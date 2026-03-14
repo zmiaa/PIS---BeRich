@@ -33,6 +33,12 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        binding.fabAdd.setOnClickListener(v-> {
+            Intent intent = new Intent(HomeActivity.this, AddTransactionActivity.class);
+            startActivity(intent);
+        });
+
+
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main, (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());

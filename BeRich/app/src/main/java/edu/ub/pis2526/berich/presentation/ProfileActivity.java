@@ -31,8 +31,14 @@ public class ProfileActivity extends AppCompatActivity {
 
         // configurar el botó de Log out
         setupClickListeners();
+
         binding.navHome.setOnClickListener(v-> {
             Intent intent = new Intent(ProfileActivity.this, HomeActivity.class);
+            startActivity(intent);
+        });
+
+        binding.fabAdd.setOnClickListener(v-> {
+            Intent intent = new Intent(ProfileActivity.this, AddTransactionActivity.class);
             startActivity(intent);
         });
     }
