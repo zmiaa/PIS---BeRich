@@ -9,7 +9,15 @@ import edu.ub.pis2526.berich.domain.Client;
 public class AuthenticationService {
   /* Attributes */
   private static MockClientsHashMap clients;
+  private static Client currentUser;
   static { clients = new MockClientsHashMap(); }
+
+  // per assegurar que totes les pantalles facin servir el mateix servei
+  private static AuthenticationService instance;
+  public static AuthenticationService getInstance() {
+    if (instance == null) instance = new AuthenticationService();
+    return instance;
+  }
 
   /**
    * Empty constructor
@@ -47,6 +55,7 @@ public class AuthenticationService {
         throw new Throwable("Incorrect password");
       }
 
+      currentUser = clientFound;
 
       listener.onLogInSuccess(clientFound);
     }catch(Throwable throwable){
@@ -134,5 +143,13 @@ public class AuthenticationService {
       if (hasUppercase && hasDigit) return true;
     }
     return false;
+  }
+
+  public Client getLoggedInClient() {
+    return currentUser;
+  }
+
+  public void logOut() {
+    currentUser = null;
   }
 }
