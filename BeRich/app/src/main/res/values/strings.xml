@@ -30,7 +30,7 @@
     <string name="gift">Gift</string>
     <string name="bills">Bills</string>
     <string name="confirmar">Confirmar</string>
-            <!--numeros-->
+    <!--numeros-->
     <string name="inic_num">0</string>
     <string name="num_1">1</string>
     <string name="num_2">2</string>
@@ -41,13 +41,16 @@
     <string name="num_7">7</string>
     <string name="num_8">8</string>
     <string name="num_9">9</string>
-            <!--operacions-->
+    <!--operacions-->
     <string name="multi">*</string>
     <string name="sum">+</string>
     <string name="resta">-</string>
     <string name="divisio">/</string>
 
-    <string name="berich">BeRich</string>
+    <string name="dot">.</string>
+    <string name="currency_symbol">€</string>
+
+    <!--activity_profile-->
     <string name="nombre_apellido">Nombre Apellido</string>
     <string name="configuraci_de_compte">Configuració de compte</string>
     <string name="settings">SETTINGS</string>
@@ -59,12 +62,6 @@
     <string name="nav_add">" "</string>
     <string name="nav_mood">" "</string>
     <string name="nav_settings">" "</string>
-    <string name="dot">.</string>
-    <string name="currency_symbol">€</string>
-
-
-
-
 
 
 
