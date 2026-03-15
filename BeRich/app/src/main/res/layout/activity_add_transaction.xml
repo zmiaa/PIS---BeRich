@@ -66,7 +66,7 @@
         android:layout_width="233dp"
         android:layout_height="52dp"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="268dp"
+        android:layout_marginTop="260dp"
         android:background="@android:drawable/edit_text"
         android:gravity="end"
         android:padding="8dp"
@@ -83,11 +83,25 @@
         android:layout_height="wrap_content"
         android:columnCount="4"
         android:padding="8dp"
-        app:layout_constraintBottom_toBottomOf="parent">
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtAmountDisplay"
+        app:layout_constraintVertical_bias="0.384"
+        tools:layout_editor_absoluteX="0dp">
 
-        <Button android:text="@string/num_1" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
-        <Button android:text="@string/num_2" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
-        <Button android:text="@string/num_3" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
+        <Button
+            style="?attr/materialButtonOutlinedStyle"
+            android:onClick="onNumberClick"
+            android:text="@string/num_1" />
+
+        <Button
+            style="?attr/materialButtonOutlinedStyle"
+            android:onClick="onNumberClick"
+            android:text="@string/num_2" />
+
+        <Button
+            style="?attr/materialButtonOutlinedStyle"
+            android:onClick="onNumberClick"
+            android:text="@string/num_3" />
 
         <Button
             android:id="@+id/btnPlus"
@@ -97,40 +111,76 @@
             android:onClick="onTypeClick"
             android:text="@string/sum" />
 
-        <Button android:text="@string/num_4" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
-        <Button android:text="@string/num_5" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
-        <Button android:text="@string/num_6" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
+        <Button
+            style="?attr/materialButtonOutlinedStyle"
+            android:onClick="onNumberClick"
+            android:text="@string/num_4" />
+
+        <Button
+            style="?attr/materialButtonOutlinedStyle"
+            android:onClick="onNumberClick"
+            android:text="@string/num_5" />
+
+        <Button
+            style="?attr/materialButtonOutlinedStyle"
+            android:onClick="onNumberClick"
+            android:text="@string/num_6" />
 
         <Button
             android:id="@+id/btnMinus"
-            android:layout_width="105dp"
+            android:layout_width="103dp"
             android:layout_height="wrap_content"
             android:backgroundTint="#FFE0B2"
             android:onClick="onTypeClick"
             android:text="@string/resta" />
 
-        <Button android:text="@string/num_7" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
-        <Button android:text="@string/num_8" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
-        <Button android:text="@string/num_9" style="?attr/materialButtonOutlinedStyle" android:onClick="onNumberClick"/>
+        <Button
+            style="?attr/materialButtonOutlinedStyle"
+            android:onClick="onNumberClick"
+            android:text="@string/num_7" />
 
         <Button
-            android:text="@string/inic_num"
+            style="?attr/materialButtonOutlinedStyle"
+            android:onClick="onNumberClick"
+            android:text="@string/num_8" />
+
+        <Button
+            style="?attr/materialButtonOutlinedStyle"
+            android:onClick="onNumberClick"
+            android:text="@string/num_9" />
+
+        <Button
             style="?attr/materialButtonOutlinedStyle"
             android:layout_columnSpan="2"
-            android:onClick="onNumberClick"/>
+            android:onClick="onNumberClick"
+            android:text="@string/inic_num" />
 
         <Button
             android:id="@+id/btnDot"
-            android:text="@string/dot"
             style="?attr/materialButtonOutlinedStyle"
-            android:onClick="onNumberClick"/>
+            android:onClick="onNumberClick"
+            android:text="@string/dot" />
 
     </GridLayout>
 
     <Button
+        android:id="@+id/btnCancel"
+        style="?attr/materialButtonOutlinedStyle"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
+        android:layout_marginBottom="8dp"
+        android:backgroundTint="#E0E0E0"
+        android:onClick="onCancelClick"
+        android:text="@string/cancelar"
+        android:textColor="#424242"
+        app:layout_constraintBottom_toTopOf="@+id/btnSave"
+        app:layout_constraintEnd_toEndOf="@+id/btnSave"
+        app:layout_constraintStart_toStartOf="@+id/btnSave" />
+
+    <Button
         android:id="@+id/btnSave"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="48dp"
         android:layout_margin="16dp"
         android:backgroundTint="#4CAF50"
         android:onClick="onSaveTransaction"
