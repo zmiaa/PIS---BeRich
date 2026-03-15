@@ -11,14 +11,22 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import java.util.Locale;
+
 import edu.ub.pis2526.berich.R;
 import edu.ub.pis2526.berich.data.services.AuthenticationService;
 import edu.ub.pis2526.berich.databinding.ActivityHomeBinding;
 import edu.ub.pis2526.berich.databinding.ActivityLoginBinding;
+import edu.ub.pis2526.berich.domain.Client;
 
 public class HomeActivity extends AppCompatActivity {
     private ActivityHomeBinding binding;
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        updateHomeData();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +54,17 @@ public class HomeActivity extends AppCompatActivity {
             return insets;
         });
 
+    }
 
+    //AActualització de home page
+    private void updateHomeData() {
+        Client client = AuthenticationService.getInstance().getLoggedInClient();
+        if (client != null) {
+            //Obtenim el total
+            double total = client.getTotalBalance();
+
+            String formattedBalance = String.format(Locale.getDefault(), "%.2f €", total);
+            binding.tvTotalBalance.setText(formattedBalance);
+        }
     }
 }

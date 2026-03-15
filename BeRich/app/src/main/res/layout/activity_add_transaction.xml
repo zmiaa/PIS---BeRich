@@ -33,31 +33,37 @@
         <Button
             android:id="@+id/catFood"
             style="?attr/materialIconButtonStyle"
+            android:onClick="onCategoryClick"
             android:text="@string/food" />
 
         <Button
             android:id="@+id/catTransport"
             style="?attr/materialIconButtonStyle"
+            android:onClick="onCategoryClick"
             android:text="@string/transport" />
 
         <Button
             android:id="@+id/catShopping"
             style="?attr/materialIconButtonStyle"
+            android:onClick="onCategoryClick"
             android:text="@string/shopping" />
 
         <Button
             android:id="@+id/catSalary"
             style="?attr/materialIconButtonStyle"
+            android:onClick="onCategoryClick"
             android:text="@string/salary" />
 
         <Button
             android:id="@+id/catGift"
             style="?attr/materialIconButtonStyle"
+            android:onClick="onCategoryClick"
             android:text="@string/gift" />
 
         <Button
             android:id="@+id/catBills"
             style="?attr/materialIconButtonStyle"
+            android:onClick="onCategoryClick"
             android:text="@string/bills" />
     </GridLayout>
 
