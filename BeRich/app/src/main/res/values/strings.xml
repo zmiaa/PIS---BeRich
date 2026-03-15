@@ -30,6 +30,7 @@
     <string name="gift">Gift</string>
     <string name="bills">Bills</string>
     <string name="confirmar">Confirmar</string>
+    <string name="cancelar">Cancelar</string>
             <!--numeros-->
     <string name="inic_num">0</string>
     <string name="num_1">1</string>
