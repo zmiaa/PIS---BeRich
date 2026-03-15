@@ -77,4 +77,9 @@ public class AddTransactionActivity extends AppCompatActivity {
             binding.txtAmountDisplay.setTextColor(ContextCompat.getColor(this, R.color.orange_light));
         }
     }
+
+    public void onCancelClick(View view) {
+        // Tanquem l'activitat sense guardar res
+        finish();
+    }
 }
