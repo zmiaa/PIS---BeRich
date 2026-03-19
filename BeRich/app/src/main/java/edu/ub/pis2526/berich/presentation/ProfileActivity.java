@@ -41,6 +41,13 @@ public class ProfileActivity extends AppCompatActivity {
             Intent intent = new Intent(ProfileActivity.this, AddTransactionActivity.class);
             startActivity(intent);
         });
+
+        // US15 - Visualització general sobre Benestar Emocional i Diari
+        // Despres de fer click al simbol emoji, es va la la pantalla de Calendari d'emocions
+        binding.navMood.setOnClickListener(v -> {
+            Intent intent = new Intent(ProfileActivity.this, EmotionCalendarActivity.class);
+            startActivity(intent);
+        });
     }
 
     private void setupProfileInfo() {

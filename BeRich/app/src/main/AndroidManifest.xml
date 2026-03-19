@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BeRich">
         <activity
+            android:name=".presentation.EmotionCalendarActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.HomeActivity"
             android:exported="false" />
         <activity
