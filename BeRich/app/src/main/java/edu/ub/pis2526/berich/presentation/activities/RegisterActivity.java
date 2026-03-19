@@ -1,4 +1,4 @@
-package edu.ub.pis2526.berich.presentation;
+package edu.ub.pis2526.berich.presentation.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,15 +9,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
 
-import edu.ub.pis2526.berich.R;
 import edu.ub.pis2526.berich.data.services.AuthenticationService;
 import edu.ub.pis2526.berich.databinding.ActivityRegisterBinding;
+import edu.ub.pis2526.berich.presentation.viewmodels.RegisterViewModel;
 
 public class RegisterActivity extends AppCompatActivity {
 
     private ActivityRegisterBinding binding;
-    private AuthenticationService authenticationService;
+    private RegisterViewModel registerViewModel;
 
 
     @Override
@@ -27,35 +28,36 @@ public class RegisterActivity extends AppCompatActivity {
 
         setContentView(binding.getRoot());
 
-        authenticationService = new AuthenticationService();
+        initViewModel();
+        initObservers();
+        initWidgetListeners();
+    }
 
+    private void initViewModel(){
+        registerViewModel = new ViewModelProvider(this).get(RegisterViewModel.class);
+    }
+
+    private void initObservers() {
+
+        registerViewModel.getRegisterState().observe(this, state -> {
+            if (state.success) {
+                Toast.makeText(this, "Registro completado con éxito", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(this, LoginActivity.class));
+                finish();
+            } else {
+                Toast.makeText(this, state.errorMessage, Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void initWidgetListeners() {
         binding.btnConfirmSignUp.setOnClickListener(v -> {
             String username = binding.etSignUpUsername.getText().toString().trim();
             String email = binding.etSignUpEmail.getText().toString().trim();
             String password = binding.etSignUpPassWord.getText().toString();
             String c_password = binding.etSignUpPassWordConfirmation.getText().toString();
 
-            authenticationService.signUp(username, email, password, c_password, new AuthenticationService.OnSignUpListener() {
-                @Override
-                public void onSignUpSuccess() {
-
-
-                    Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                    startActivity(intent);
-                }
-
-                @Override
-                public void onSignUpError(Throwable throwable) {
-                    Toast.makeText(RegisterActivity.this, throwable.getMessage(), Toast.LENGTH_SHORT).show();
-                }
-            });
-        });
-
-        EdgeToEdge.enable(this);
-        ViewCompat.setOnApplyWindowInsetsListener(binding.getRoot(), (v, insets) -> {
-            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
-            return insets;
+            registerViewModel.signUp(username, email, password, c_password);
         });
     }
 }
