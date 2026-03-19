@@ -1,5 +1,6 @@
 package edu.ub.pis2526.berich.presentation;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -52,10 +53,26 @@ public class AddTransactionActivity extends AppCompatActivity {
     public void onSaveTransaction(View view) {
         try {
             double finalAmount = Double.parseDouble(currentAmount);
-            if (!isIncome) finalAmount *= -1;
+            if (finalAmount <= 0) {
+                Toast.makeText(this, "Introdueix un import vàlid", Toast.LENGTH_SHORT).show();
+                return;
+            }
 
-            // Aquí en un futur fara la crida al ViewModel/BD
-            finish();
+            Client loggedClient = AuthenticationService.getInstance().getLoggedInClient();
+
+            if (loggedClient != null && isIncome != null) {
+                // Guardem la transacció
+                Transaction newTransaction = new Transaction(finalAmount, selectedCategory, isIncome);
+                loggedClient.addTransaction(newTransaction);
+                Toast.makeText(this, "Transacció guardada", Toast.LENGTH_SHORT).show();
+
+                // Tornem a HomeActivity netejant la pila de pantalles
+                Intent intent = new Intent(this, HomeActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                startActivity(intent);
+
+                finish();
+            }
         } catch (NumberFormatException e) {
             currentAmount = "0";
             updateDisplay();
@@ -79,7 +96,20 @@ public class AddTransactionActivity extends AppCompatActivity {
     }
 
     public void onCancelClick(View view) {
-        // Tanquem l'activitat sense guardar res
+        // En cas de cancel·lar, també forcem la tornada a HomeActivity
+        Intent intent = new Intent(this, HomeActivity.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
         finish();
+    }
+
+    public void onBackspaceClick(View view) {
+        if (currentAmount.equals("0")) return;
+        if (currentAmount.length() <= 1) {
+            currentAmount = "0";
+        } else {
+            currentAmount = currentAmount.substring(0, currentAmount.length() - 1);
+        }
+        updateDisplay();
     }
 }

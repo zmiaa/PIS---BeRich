@@ -11,81 +11,55 @@
         android:id="@+id/textTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:text="@string/name"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <GridLayout
         android:id="@+id/gridCategories"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:alignmentMode="alignMargins"
         android:columnCount="3"
         android:padding="16dp"
-        app:layout_constraintTop_toBottomOf="@id/textTitle"
-        tools:layout_editor_absoluteX="0dp">
+        app:layout_constraintTop_toBottomOf="@id/textTitle">
 
-        <Button
-            android:id="@+id/catFood"
-            style="?attr/materialIconButtonStyle"
-            android:text="@string/food" />
-
-        <Button
-            android:id="@+id/catTransport"
-            style="?attr/materialIconButtonStyle"
-            android:text="@string/transport" />
-
-        <Button
-            android:id="@+id/catShopping"
-            style="?attr/materialIconButtonStyle"
-            android:text="@string/shopping" />
-
-        <Button
-            android:id="@+id/catSalary"
-            style="?attr/materialIconButtonStyle"
-            android:text="@string/salary" />
-
-        <Button
-            android:id="@+id/catGift"
-            style="?attr/materialIconButtonStyle"
-            android:text="@string/gift" />
-
-        <Button
-            android:id="@+id/catBills"
-            style="?attr/materialIconButtonStyle"
-            android:text="@string/bills" />
+        <Button android:id="@+id/catFood" style="?attr/materialIconButtonStyle" android:onClick="onCategoryClick" android:text="@string/food" />
+        <Button android:id="@+id/catTransport" style="?attr/materialIconButtonStyle" android:onClick="onCategoryClick" android:text="@string/transport" />
+        <Button android:id="@+id/catShopping" style="?attr/materialIconButtonStyle" android:onClick="onCategoryClick" android:text="@string/shopping" />
+        <Button android:id="@+id/catSalary" style="?attr/materialIconButtonStyle" android:onClick="onCategoryClick" android:text="@string/salary" />
+        <Button android:id="@+id/catGift" style="?attr/materialIconButtonStyle" android:onClick="onCategoryClick" android:text="@string/gift" />
+        <Button android:id="@+id/catBills" style="?attr/materialIconButtonStyle" android:onClick="onCategoryClick" android:text="@string/bills" />
     </GridLayout>
 
     <TextView
         android:id="@+id/txtAmountDisplay"
-        android:layout_width="233dp"
-        android:layout_height="52dp"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
         android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="260dp"
         android:background="@android:drawable/edit_text"
-        android:gravity="end"
+        android:gravity="end|center_vertical"
         android:padding="8dp"
         android:text="@string/inic_num"
         android:textSize="32sp"
+        app:layout_constraintBottom_toTopOf="@+id/numericKeyboard"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/gridCategories" />
+        app:layout_constraintTop_toBottomOf="@id/gridCategories"
+        app:layout_constraintVertical_bias="0.969" />
 
     <GridLayout
         android:id="@+id/numericKeyboard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
         android:columnCount="4"
         android:padding="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtAmountDisplay"
-        app:layout_constraintVertical_bias="0.384"
         tools:layout_editor_absoluteX="0dp">
 
         <Button
@@ -105,8 +79,6 @@
 
         <Button
             android:id="@+id/btnPlus"
-            android:layout_width="102dp"
-            android:layout_height="wrap_content"
             android:backgroundTint="#D1E9FF"
             android:onClick="onTypeClick"
             android:text="@string/sum" />
@@ -128,8 +100,6 @@
 
         <Button
             android:id="@+id/btnMinus"
-            android:layout_width="103dp"
-            android:layout_height="wrap_content"
             android:backgroundTint="#FFE0B2"
             android:onClick="onTypeClick"
             android:text="@string/resta" />
@@ -149,9 +119,12 @@
             android:onClick="onNumberClick"
             android:text="@string/num_9" />
 
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp" />
+
         <Button
             style="?attr/materialButtonOutlinedStyle"
-            android:layout_columnSpan="2"
             android:onClick="onNumberClick"
             android:text="@string/inic_num" />
 
@@ -161,6 +134,12 @@
             android:onClick="onNumberClick"
             android:text="@string/dot" />
 
+        <Button
+            android:id="@+id/btnBackspace"
+            style="?attr/materialButtonOutlinedStyle"
+            android:onClick="onBackspaceClick"
+            android:text="@string/backspace"
+            android:textColor="#F44336" />
     </GridLayout>
 
     <Button
@@ -168,20 +147,21 @@
         style="?attr/materialButtonOutlinedStyle"
         android:layout_width="120dp"
         android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginBottom="8dp"
         android:backgroundTint="#E0E0E0"
         android:onClick="onCancelClick"
         android:text="@string/cancelar"
         android:textColor="#424242"
         app:layout_constraintBottom_toTopOf="@+id/btnSave"
-        app:layout_constraintEnd_toEndOf="@+id/btnSave"
-        app:layout_constraintStart_toStartOf="@+id/btnSave" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/btnSave"
         android:layout_width="120dp"
         android:layout_height="48dp"
-        android:layout_margin="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="#4CAF50"
         android:onClick="onSaveTransaction"
         android:text="@string/confirmar"
