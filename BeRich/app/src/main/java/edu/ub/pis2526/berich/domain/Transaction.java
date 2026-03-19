@@ -21,5 +21,18 @@ public class Transaction {
     public boolean isIncome() {
         return isIncome;
     }
+
+    // per modificar la quantitat per modify transaction
+    public void setQuantitat(double quantitat) {
+        this.quantitat = quantitat;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public void setIncome(boolean income) {
+        isIncome = income;
+    }
 }
 
