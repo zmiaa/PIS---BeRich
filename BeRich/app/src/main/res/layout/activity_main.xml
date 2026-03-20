@@ -7,7 +7,7 @@
     android:orientation="vertical"
     android:gravity="center"
     android:padding="20dp"
-    tools:context=".presentation.MainActivity">
+    tools:context=".presentation.activities.MainActivity">
 
     <ImageView
         android:id="@+id/iv_logo"

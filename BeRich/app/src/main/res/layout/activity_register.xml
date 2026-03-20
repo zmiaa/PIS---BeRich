@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="?attr/colorSurfaceContainerHigh"
-    tools:context=".presentation.RegisterActivity">
+    tools:context=".presentation.activities.RegisterActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
