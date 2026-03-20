@@ -18,6 +18,7 @@ import edu.ub.pis2526.berich.data.services.AuthenticationService;
 import edu.ub.pis2526.berich.databinding.ActivityHomeBinding;
 import edu.ub.pis2526.berich.databinding.ActivityLoginBinding;
 import edu.ub.pis2526.berich.domain.Client;
+import edu.ub.pis2526.berich.presentation.activities.AddTransactionActivity;
 
 public class HomeActivity extends AppCompatActivity {
     private ActivityHomeBinding binding;
