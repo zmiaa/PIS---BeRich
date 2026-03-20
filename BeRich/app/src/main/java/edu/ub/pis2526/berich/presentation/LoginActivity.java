@@ -35,9 +35,8 @@ public class LoginActivity extends AppCompatActivity {
                 @Override
                 public void onLogInSuccess(Client client) {
 
-                    //Cuando tengamos Home Page, descomentamos!!!!!!!!!
-                    // Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
-                    // startActivity(intent);
+                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    startActivity(intent);
                 }
 
                 @Override

@@ -11,16 +11,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BeRich">
-
-
-
+        <activity
+            android:name=".presentation.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.ProfileActivity"
+            android:exported="false" />
         <activity
             android:name=".presentation.AddTransactionActivity"
             android:exported="false" />
-
-
-
-
         <activity
             android:name=".presentation.LoginActivity"
             android:exported="false" />

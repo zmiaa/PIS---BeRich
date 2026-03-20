@@ -43,14 +43,17 @@
     <string name="num_7">7</string>
     <string name="num_8">8</string>
     <string name="num_9">9</string>
-            <!--operacions-->
+    <!--operacions-->
     <string name="multi">*</string>
     <string name="sum">+</string>
     <string name="resta">-</string>
     <string name="divisio">/</string>
 
-    <string name="berich">BeRich</string>
-    <string name="nombre_apellido">Nombre Apellido</string>
+    <string name="dot">.</string>
+    <string name="currency_symbol">€</string>
+
+    <!--activity_profile-->
+    <string name="username">Username</string>
     <string name="configuraci_de_compte">Configuració de compte</string>
     <string name="settings">SETTINGS</string>
     <string name="help">Help</string>
@@ -61,12 +64,14 @@
     <string name="nav_add">" "</string>
     <string name="nav_mood">" "</string>
     <string name="nav_settings">" "</string>
-    <string name="dot">.</string>
-    <string name="currency_symbol">€</string>
 
 
 
+    <!--activity_home-->
+    <string name="saldo_t">Saldo total</string>
 
+    <string name="cash_label">Efectiu</string>
+    <string name="cards_label">Targetes</string>
 
 
 

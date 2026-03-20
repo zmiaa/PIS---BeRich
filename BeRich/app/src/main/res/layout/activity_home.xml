@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F2F2F7"
+    tools:context=".presentation.HomeActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/cardBottomNav">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/name"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/ios_text_main" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:cardCornerRadius="24dp"
+                app:cardBackgroundColor="@color/blue_income"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/saldo_t"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+<!--FALTA MODIFICAR, HA DE SER UN NUMERO DINAMIC!!!!-->
+                    <TextView
+                        android:id="@+id/tvTotalBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="10.250.000.000,50 €"
+                        android:textColor="@color/white"
+                        android:textSize="32sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:weightSum="2">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvCashLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cash_label"
+                            android:textSize="12sp"
+                            android:textColor="@color/ios_text_sec"
+                            android:textAllCaps="true"
+                            android:letterSpacing="0.05" />
+                        <!--FALTA MODIFICAR, HA DE SER UN NUMERO DINAMIC!!!!-->
+                        <TextView
+                            android:id="@+id/tvCashValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="0,00 €"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/ios_text_main" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    app:cardCornerRadius="16dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            android:id="@+id/tvBankLabel"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cards_label"
+                            android:textSize="12sp"
+                            android:textColor="@color/ios_text_sec"
+                            android:textAllCaps="true"
+                            android:letterSpacing="0.05" />
+                        <!--FALTA MODIFICAR, HA DE SER UN NUMERO DINAMIC!!!!-->
+                        <TextView
+                            android:id="@+id/tvBankValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="0,00 €"
+                            android:textSize="18sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/ios_text_main" />
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardBottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_margin="20dp"
+        app:cardCornerRadius="35dp"
+        app:cardElevation="10dp"
+        app:strokeWidth="0dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <ImageButton
+                android:id="@+id/navHome"
+                android:contentDescription="@string/nav_home"
+                android:src="@drawable/house"
+                style="@style/NavButtonStyle"
+                android:layout_weight="1"
+                app:tint="@color/blue_light"/>
+
+            <ImageButton
+                android:id="@+id/navStats"
+                android:contentDescription="@string/nav_stats"
+                android:src="@drawable/chart"
+                style="@style/NavButtonStyle"
+                android:layout_weight="1"
+                app:tint="@color/ios_text_sec"/>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabAdd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/nav_add"
+                android:src="@android:drawable/ic_input_add"
+                app:backgroundTint="@color/blue_light"
+                app:tint="@color/white"
+                app:fabSize="mini"
+                app:elevation="0dp"
+                android:layout_marginHorizontal="8dp"/>
+
+            <ImageButton
+                android:id="@+id/navMood"
+                android:contentDescription="@string/nav_mood"
+                android:src="@drawable/face"
+                style="@style/NavButtonStyle"
+                android:layout_weight="1"
+                app:tint="@color/ios_text_sec"/>
+
+            <ImageButton
+                android:id="@+id/navSettings"
+                android:contentDescription="@string/nav_settings"
+                android:src="@drawable/settings"
+                style="@style/NavButtonStyle"
+                android:layout_weight="1"
+                app:tint="@color/ios_text_sec"
+                android:clickable="true"
+                android:focusable="true"
+                android:background="?attr/selectableItemBackgroundBorderless" />
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
