@@ -24,6 +24,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:alignmentMode="alignMargins"
         android:columnCount="3"
         android:padding="16dp"
         app:layout_constraintTop_toBottomOf="@id/textTitle">
@@ -153,6 +154,7 @@
             android:layout_column="2"
             android:onClick="onNumberClick"
             android:text="@string/dot" />
+
     </GridLayout>
 
     <Button

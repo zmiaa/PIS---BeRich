@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import edu.ub.pis2526.berich.data.services.AuthenticationService;
 import edu.ub.pis2526.berich.databinding.ActivityProfileBinding;
 import edu.ub.pis2526.berich.domain.Client;
+import edu.ub.pis2526.berich.presentation.activities.AddTransactionActivity;
 
 /**
  * Activity que gestiona el perfil del usuari i la configuració (US6).
