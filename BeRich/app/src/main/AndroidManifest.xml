@@ -27,6 +27,9 @@
             android:name=".presentation.activities.RegisterActivity"
             android:exported="false" />
         <activity
+            android:name=".presentation.EmotionCalendarActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.activities.MainActivity"
             android:exported="true">
             <intent-filter>

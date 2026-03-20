@@ -42,6 +42,12 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(intent);
         });
 
+        // US15 - Visualització general sobre Benestar Emocional i Diari
+        // Despres de fer click al simbol emoji, es va la la pantalla de Calendari d'emocions
+        binding.navMood.setOnClickListener(v -> {
+            Intent intent = new Intent(HomeActivity.this, EmotionCalendarActivity.class);
+            startActivity(intent);
+        });
 
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main, (v, insets) -> {
