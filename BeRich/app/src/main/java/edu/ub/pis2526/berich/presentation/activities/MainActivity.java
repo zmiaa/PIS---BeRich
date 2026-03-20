@@ -1,4 +1,4 @@
-package edu.ub.pis2526.berich.presentation;
+package edu.ub.pis2526.berich.presentation.activities;
 
 import android.content.Intent;
 import android.os.Bundle;

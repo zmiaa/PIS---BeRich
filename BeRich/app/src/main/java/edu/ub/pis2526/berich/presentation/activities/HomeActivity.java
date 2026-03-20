@@ -1,9 +1,7 @@
-package edu.ub.pis2526.berich.presentation;
+package edu.ub.pis2526.berich.presentation.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,10 +11,8 @@ import androidx.core.view.WindowInsetsCompat;
 
 import java.util.Locale;
 
-import edu.ub.pis2526.berich.R;
 import edu.ub.pis2526.berich.data.services.AuthenticationService;
 import edu.ub.pis2526.berich.databinding.ActivityHomeBinding;
-import edu.ub.pis2526.berich.databinding.ActivityLoginBinding;
 import edu.ub.pis2526.berich.domain.Client;
 
 public class HomeActivity extends AppCompatActivity {

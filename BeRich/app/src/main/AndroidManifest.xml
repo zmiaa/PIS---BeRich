@@ -12,25 +12,25 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BeRich">
         <activity
+            android:name=".presentation.activities.HomeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activities.ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activities.AddTransactionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activities.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".presentation.activities.RegisterActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.EmotionCalendarActivity"
             android:exported="false" />
         <activity
-            android:name=".presentation.HomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.ProfileActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.AddTransactionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.LoginActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".presentation.MainActivity"
+            android:name=".presentation.activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

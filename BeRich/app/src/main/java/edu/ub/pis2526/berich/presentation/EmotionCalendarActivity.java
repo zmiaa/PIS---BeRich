@@ -23,6 +23,7 @@ import java.util.Locale;
 
 import edu.ub.pis2526.berich.R;
 import edu.ub.pis2526.berich.databinding.ActivityEmotionCalendarBinding;
+import edu.ub.pis2526.berich.presentation.activities.HomeActivity;
 
 public class EmotionCalendarActivity extends AppCompatActivity {
 
