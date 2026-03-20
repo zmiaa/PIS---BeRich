@@ -1,0 +1,25 @@
+# pack-refs with: peeled fully-peeled sorted 
+5f7be2645e31dd7e4e293942e0e462930d4e9edc refs/heads/10-us8---desglossament-de-per-mètode-de-pagament
+8f4d3f6f45d1e3976963d53030c05dee00f382f0 refs/heads/13-us6---gestió-de-perfil-i-configuració
+9188b0f05b12f82cf03fb8629ae78a76fe7c124f refs/heads/16-us16-registre-transaccions
+29e45832ad5358b2c5f2b8fbaa5a6e0dd69d7d60 refs/heads/24-us19---visualitzar-pagina-principal-main
+51b5b0a489c502d70950335d9f47b14174d8088b refs/heads/3-us1-registre-usuari
+48cc6d3ffdfe58d24e0cef4339c9621fa2a1ddfb refs/heads/4-us2---autentificacio-amb-contrasenya-log-in
+77bd4221f8d135d514942220ebf36f48449b8a12 refs/heads/5-us18---modificació-de-transacció
+446e51e1bc12a016e0c36c82e856bad6043aa84d refs/heads/6-us17---eliminació-de-transacció
+446e51e1bc12a016e0c36c82e856bad6043aa84d refs/heads/7-us16---registre-de-transaccions-ingressosdespeses
+5cbd31c8001004a6ad8eb8862e7287185ec05118 refs/heads/9-us3---afegir-comentarisnotes-diaris
+cce22318d24e0e956fd340b0bdc7a6c56389071d refs/heads/feat/mvvm_logic_refactor
+5f7be2645e31dd7e4e293942e0e462930d4e9edc refs/heads/fix-us16-binding-logic
+cf7b0a091c0c8f54088a3ff3da106cc24a4be1f2 refs/heads/main
+a4bf9912af46643418c8e40a14037f12624066f2 refs/heads/us15---visualització-general-sobre-benestar-emocional-i-diari
+016d1542db4693c43598e9d08533fde8cad8b83a refs/pull/21/head
+51b5b0a489c502d70950335d9f47b14174d8088b refs/pull/22/head
+48cc6d3ffdfe58d24e0cef4339c9621fa2a1ddfb refs/pull/23/head
+b772e64ac718603a3b62bbfb923063a2b9871c59 refs/pull/25/head
+362077676df4613c6704efe78924ff46582da61b refs/pull/26/head
+8f4d3f6f45d1e3976963d53030c05dee00f382f0 refs/pull/27/head
+e0af8a2c685b735f720f111e573d044428312295 refs/pull/28/head
+77bd4221f8d135d514942220ebf36f48449b8a12 refs/pull/29/head
+cce22318d24e0e956fd340b0bdc7a6c56389071d refs/pull/30/head
+a4bf9912af46643418c8e40a14037f12624066f2 refs/pull/31/head
